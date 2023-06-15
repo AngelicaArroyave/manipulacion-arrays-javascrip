@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JavaScript </title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <div id="form-check"></div> <!-- Ejercicio -->
+
+    <script>
+        const products = [
+            { title: 'Burger', price: 10 },
+            { title: 'Pizza', price: 20 }
+        ]
+
+        const app = document.getElementById('app')
+
+        products.forEach(product => {
+            app.innerHTML += `<li> ${product.title} - ${product.price} </li>`
+        })
+
+        // Ejercicio
+        const tasks = [
+            { name: 'Create file', status: 'done' },
+            { name: 'Create recourses', status: 'unrealized' },
+            { name: 'Deployed', status: 'done' }
+        ]
+
+        const formCheck = document.getElementById('form-check')
+
+        tasks.forEach(({ name, status }) => {
+            // FORMA 1
+            // if(status === 'done') {
+            //     formCheck.innerHTML += `<input type='checkbox' checked>`
+            // } else {
+            //     formCheck.innerHTML += `<input type='checkbox'>`
+            // }
+
+            // FORMA 2
+            (status === 'done') ? check = 'checked' : check = ''
+            formCheck.innerHTML += `<input type='checkbox' ${check}>
+                                    <label> ${name} </label>
+                                    <br>`
+        })
+    </script>
+</body>
+
+</html>
